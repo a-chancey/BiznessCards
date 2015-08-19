@@ -1,7 +1,7 @@
 package biznesscards
 
 class CardController {
-    def defaultAction = 'list'
+    def static defaultAction = 'list'
 
     def edit = {
         def card = Card.get(params.id)
