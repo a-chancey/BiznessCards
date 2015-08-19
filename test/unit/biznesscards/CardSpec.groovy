@@ -1,0 +1,43 @@
+package biznesscards
+
+import grails.test.mixin.TestFor
+import spock.lang.Specification
+
+/**
+ * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
+ */
+@TestFor(Card)
+class CardSpec extends Specification {
+
+    def setup() {
+    }
+
+    def cleanup() {
+    }
+
+    void "test card saving and retrieving"() {
+        given:
+        Card card = new Card(firstName: "Aaron",
+                lastName: "Chancey",
+                jobTitle: "Computer Wizard",
+                addressCity: "Dublin",
+                addressLineOne: "2491 Abbotsford Way",
+                addressLineTwo: "",
+                addressState: "OH",
+                addressZip: "43016",
+                companyName: "Manifest",
+                homePhone: "",
+                mobilePhone: "",
+                notes: "")
+        card.save()
+
+
+        when:
+        def id = card.id
+
+        then:
+        Card retrievedCard = Card.get(id)
+        retrievedCard.jobTitle.equals "Computer Wizard"
+
+    }
+}

@@ -9,6 +9,7 @@ Desktop.ini
 $RECYCLE.BIN/
 .idea/
 target/
+/out
 
 # Windows Installer files
 *.cab
