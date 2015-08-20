@@ -13,6 +13,25 @@ class CardController {
 
     def list = {
         render(view:'list',
-        model:[cards:Card.list(sort:'lastName', order:'desc')])
+        model:[cards:Card.list(sort:'lastName')])
     }
+
+    def save = {
+        def card = loadCard(params.id)
+        card.properties = params
+        if(card.save()) {
+            redirect(action:'list')
+        } else {
+            render(view:'edit', model:[card:card])
+        }
+    }
+
+    private loadCard(id){
+    def card = new Card();
+        if(id) {
+            card = Card.get(id)
+        }
+        return card
+    }
+
 }
