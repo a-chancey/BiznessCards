@@ -46,7 +46,7 @@
                 <g:if test="${card.notes != null}">Notes: ${card.notes}</g:if>
             </div>
 
-            <p><g:link controller="card" action="edit" id="${card.id}">Edit this card</g:link></p>
+            <p><g:link controller="card" action="edit" id="${card.id}">Edit this card</g:link> &nbsp&nbsp&nbsp <g:link controller="card" action="delete" id="${card.id}">Delete this card</g:link></p>
         </g:each>
     </div>
 

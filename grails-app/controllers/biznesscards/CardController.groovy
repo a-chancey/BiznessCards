@@ -26,6 +26,13 @@ class CardController {
         }
     }
 
+    def delete = {
+        def card = Card.get(params.id)
+        card.delete(flush: true)
+
+        redirect(action:'list')
+    }
+
     private loadCard(id){
     def card = new Card();
         if(id) {
