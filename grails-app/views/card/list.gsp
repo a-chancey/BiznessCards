@@ -13,12 +13,11 @@
 </head>
 
 <body>
-<div style="margin:auto">
     <div class="container-fluid">
         <g:link controller="card" action="edit">Create a new card!</g:link>
         <h1>Contacts:</h1>
         <g:each in="${cards}" var="card">
-            <div style="border:solid; background-color: lightgrey; margin: auto; padding: 1%">
+            <div style="border:solid; background-color: lightgrey; margin: auto; padding: 1%; text-align:center">
                 <b>${card.firstName} ${card.lastName}</b>
                 <br/>
                 ${card.jobTitle}, ${card.companyName}
@@ -50,6 +49,6 @@
             <p><g:link controller="card" action="edit" id="${card.id}">Edit this card</g:link></p>
         </g:each>
     </div>
-</div>
+
 </body>
 </html>
