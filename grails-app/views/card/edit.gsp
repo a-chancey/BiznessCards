@@ -9,6 +9,8 @@
 <html>
 <head>
     <title>Edit a business card!</title>
+    <meta name="layout" content="main"/>
+
 </head>
 
 <body>
